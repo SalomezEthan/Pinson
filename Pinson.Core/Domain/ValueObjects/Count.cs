@@ -25,5 +25,17 @@ namespace Pinson.Core.Domain.ValueObjects
         {
             ++Value;
         }
+
+        public void Decrement()
+        {
+            int newValue = Value - 1;
+
+            if (newValue < 0)
+            {
+                throw new NegativeCountException();
+            }
+
+            --Value;
+        }
     }
 }

@@ -27,5 +27,20 @@ namespace Pinson.Core.Tests.Domain.ValueObjects
             count.Increment();
             Assert.AreEqual(2, count.Value);
         }
+
+        [TestMethod]
+        public void Decrement_NegativeValue_ShouldThrow()
+        {
+            var count = new Count(0);
+            Assert.ThrowsExactly<NegativeCountException>(() => count.Decrement());
+        }
+
+        [TestMethod]
+        public void Decrement_ValueDown()
+        {
+            var count = new Count(1);
+            count.Decrement();
+            Assert.AreEqual(0, count.Value);
+        }
     }
 }
