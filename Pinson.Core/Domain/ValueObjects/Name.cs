@@ -32,5 +32,10 @@ namespace Pinson.Core.Domain.ValueObjects
         {
             return obj is Name other && this.Value == other.Value;
         }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
     }
 }
