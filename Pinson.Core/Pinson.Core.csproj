@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Domain\Entities\" />
+    <Folder Include="Domain\Exceptions\" />
+    <Folder Include="Domain\Ports\" />
+    <Folder Include="Domain\ValueObjects\" />
+    <Folder Include="History\Clear\" />
+    <Folder Include="History\List\" />
+    <Folder Include="History\Models\" />
+    <Folder Include="History\SetLimit\" />
+    <Folder Include="Music\Import\" />
+    <Folder Include="Music\Delete\" />
+    <Folder Include="Music\List\" />
+    <Folder Include="Music\Rename\" />
+    <Folder Include="Player\JumpTo\" />
+    <Folder Include="Player\Previous\" />
+    <Folder Include="Player\SetPlaybackState\" />
+    <Folder Include="Player\SetVolume\" />
+    <Folder Include="PlaylistMusic\Models\" />
+    <Folder Include="PlaylistMusic\List\" />
+    <Folder Include="PlaylistMusic\SetOrder\" />
+    <Folder Include="Playlist\Models\" />
+    <Folder Include="Playlist\List\" />
+    <Folder Include="Playlist\Create\" />
+    <Folder Include="PlaylistMusic\Add\" />
+    <Folder Include="PlaylistMusic\Remove\" />
+    <Folder Include="Playlist\Rename\" />
+    <Folder Include="Queue\Insert\" />
+    <Folder Include="Queue\Clear\" />
+    <Folder Include="Queue\Ordering\" />
+    <Folder Include="Queue\Shuffle\" />
+    <Folder Include="Queue\Remove\" />
+  </ItemGroup>
+
+</Project>

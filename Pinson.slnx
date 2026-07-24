@@ -1,1 +1,3 @@
-<Solution />
+<Solution>
+  <Project Path="Pinson.Core/Pinson.Core.csproj" />
+</Solution>
