@@ -10,7 +10,6 @@
     <Folder Include="Artists\Add\" />
     <Folder Include="Artists\Delete\" />
     <Folder Include="Artists\Rename\" />
-    <Folder Include="Domain\Ports\" />
     <Folder Include="Histories\Clear\" />
     <Folder Include="Histories\List\" />
     <Folder Include="Histories\Models\" />
