@@ -7,7 +7,7 @@ namespace Pinson.Core.Tests.Domain.ValueObjects
     public class CountTests
     {
         [TestMethod]
-        public void Construct_ValueIsNegative_Throw()
+        public void Construct_NegativeValue_Throw()
         {
             Assert.ThrowsExactly<NegativeCountException>(() => new Count(-1));
         }
@@ -29,7 +29,7 @@ namespace Pinson.Core.Tests.Domain.ValueObjects
         }
 
         [TestMethod]
-        public void Decrement_NegativeValue_ShouldThrow()
+        public void Decrement_NegativeValue_Throw()
         {
             var count = new Count(0);
             Assert.ThrowsExactly<NegativeCountException>(() => count.Decrement());
@@ -41,6 +41,14 @@ namespace Pinson.Core.Tests.Domain.ValueObjects
             var count = new Count(1);
             count.Decrement();
             Assert.AreEqual(0, count.Value);
+        }
+
+        [TestMethod]
+        public void Equals_SameValue_ReturnTrue()
+        {
+            var count = new Count(1);
+            var otherCount = new Count(1);
+            Assert.AreEqual(count, otherCount);
         }
     }
 }

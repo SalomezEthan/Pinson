@@ -37,5 +37,10 @@ namespace Pinson.Core.Domain.ValueObjects
 
             --Value;
         }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Count other && this.Value == other.Value;
+        }
     }
 }
