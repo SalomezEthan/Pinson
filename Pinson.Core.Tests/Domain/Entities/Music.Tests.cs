@@ -49,6 +49,15 @@ namespace Pinson.Core.Tests.Domain.Entities
             Assert.ThrowsExactly<NotFoundException>(() => music.RemoveArtist(artistId));
         }
 
+        [TestMethod]
+        public void IncrementListenCount_UpdateCount()
+        {
+            var music = GetTestMusic();
+            var oldCount = music.ListenCount;
+            music.IncrementListenCount();
+            Assert.AreNotEqual(oldCount, music.ListenCount);
+        }
+
         private static Music GetTestMusic()
         {
             return new Music(
