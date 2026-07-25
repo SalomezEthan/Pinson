@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="Pinson.Core.Tests/Pinson.Core.Tests.csproj" />
   <Project Path="Pinson.Core/Pinson.Core.csproj" />
 </Solution>
