@@ -14,19 +14,19 @@ namespace Pinson.Core.Domain.ValueObjects
             Value = value;
         }
 
-        public int Value { get; private set; }
+        public int Value { get; }
 
         public int ToInt()
         {
             return Value;
         }
 
-        public void Increment()
+        public Count Increment()
         {
-            ++Value;
+            return new Count(Value + 1);
         }
 
-        public void Decrement()
+        public Count Decrement()
         {
             int newValue = Value - 1;
 
@@ -35,7 +35,7 @@ namespace Pinson.Core.Domain.ValueObjects
                 throw new NegativeCountException();
             }
 
-            --Value;
+            return new Count(newValue);
         }
 
         public override bool Equals(object? obj)

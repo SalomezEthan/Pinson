@@ -24,8 +24,8 @@ namespace Pinson.Core.Tests.Domain.ValueObjects
         public void Increment_ValueUp()
         {
             var count = new Count(1);
-            count.Increment();
-            Assert.AreEqual(2, count.Value);
+            var newCount = count.Increment();
+            Assert.AreEqual(2, newCount.ToInt());
         }
 
         [TestMethod]
@@ -39,8 +39,8 @@ namespace Pinson.Core.Tests.Domain.ValueObjects
         public void Decrement_ValueDown()
         {
             var count = new Count(1);
-            count.Decrement();
-            Assert.AreEqual(0, count.Value);
+            var newCount = count.Decrement();
+            Assert.AreEqual(0, newCount.ToInt());
         }
 
         [TestMethod]

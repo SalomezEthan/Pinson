@@ -34,10 +34,10 @@ namespace Pinson.Core.Domain.Entities
 
         public Guid Id { get; }
         public DateTime ImportDate { get; }
-        public Count ListenCount { get; }
         public TimeSpan Duration { get; }
 
         public Title Title { get; private set; }
+        public Count ListenCount { get; private set; }
         public Guid? ThumbnailId { get; private set; }
 
         public IReadOnlyCollection<Guid> ArtistIds => _artistIds;
@@ -57,9 +57,9 @@ namespace Pinson.Core.Domain.Entities
             ThumbnailId = null;
         }
 
-        public void IncrementListen()
+        public void IncrementListenCount()
         {
-            ListenCount.Increment();
+            ListenCount = ListenCount.Increment();
         }
 
         public void AddArtist(Guid artistId)
