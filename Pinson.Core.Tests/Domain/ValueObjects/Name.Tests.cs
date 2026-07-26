@@ -26,7 +26,7 @@ namespace Pinson.Core.Tests.Domain.ValueObjects
         {
             string val = " Ethan     ";
             var name = BuildTestName(val);
-            Assert.AreEqual(val.Trim(), name.Value);
+            Assert.AreEqual(val.Trim(), name.ToString());
         }
 
         [TestMethod]

@@ -4,6 +4,8 @@ namespace Pinson.Core.Domain.ValueObjects
 {
     public class Name
     {
+        private readonly string _value;
+
         public Name(string value, int limit)
         {
             value = value.Trim();
@@ -18,24 +20,22 @@ namespace Pinson.Core.Domain.ValueObjects
                 throw new TooLongException();
             }
 
-            Value = value;
+            _value = value;
         }
-
-        public string Value { get; }
 
         public override string ToString()
         {
-            return Value;
+            return _value;
         }
 
         public override bool Equals(object? obj)
         {
-            return obj is Name other && this.Value == other.Value;
+            return obj is Name other && this._value == other._value;
         }
 
         public override int GetHashCode()
         {
-            return Value.GetHashCode();
+            return _value.GetHashCode();
         }
     }
 }

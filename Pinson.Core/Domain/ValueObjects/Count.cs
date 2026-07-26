@@ -4,6 +4,8 @@ namespace Pinson.Core.Domain.ValueObjects
 {
     public class Count
     {
+        private readonly int _value;
+
         public Count(int value)
         {
             if (value < 0)
@@ -11,24 +13,22 @@ namespace Pinson.Core.Domain.ValueObjects
                 throw new NegativeCountException();
             }
 
-            Value = value;
+            _value = value;
         }
-
-        public int Value { get; }
 
         public int ToInt()
         {
-            return Value;
+            return _value;
         }
 
         public Count Increment()
         {
-            return new Count(Value + 1);
+            return new Count(_value + 1);
         }
 
         public Count Decrement()
         {
-            int newValue = Value - 1;
+            int newValue = _value - 1;
 
             if (newValue < 0)
             {
@@ -40,7 +40,7 @@ namespace Pinson.Core.Domain.ValueObjects
 
         public override bool Equals(object? obj)
         {
-            return obj is Count other && this.Value == other.Value;
+            return obj is Count other && this._value == other._value;
         }
     }
 }
